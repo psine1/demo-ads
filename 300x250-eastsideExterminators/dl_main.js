@@ -92,6 +92,11 @@ function fr1(){
   var tl_ = gsap.timeline();
       tl_.timeScale(1);  
       tl_
+      .from('#footer1', 0.75, { y: 200, ease: "power3.out" }, "<")
+      .from('#footer2', 0.75, { y: 200, ease: "power3.out" }, "<+0.05")
+      .from('#logo', 1, { autoAlpha: 0, ease: "power3.out" }, "<+0.5")
+      .from('#cta', 0.75, { autoAlpha: 0, scale: 0.85, ease: "power3.out" }, "<+0.5")
+
       .from('#txt-1-1', 0.75, { y: 20, autoAlpha: 0, ease: "power3.out" }, "<")
       .from('#txt-1-2', 0.75, { y: 20, autoAlpha: 0, ease: "power3.out" }, "<+0.2")
       .from('#txt-2-1', 0.75, { y: 20, autoAlpha: 0, ease: "power3.out" }, "<+1.5")
