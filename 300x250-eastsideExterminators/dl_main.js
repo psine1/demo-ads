@@ -123,7 +123,7 @@ function fr1(){
       .from('#bg2, #gradient', 2, {autoAlpha: 0, ease: "power3.out" }, "<+1 ") 
       .from('#bg2', 8, {scale: 1.25, ease: "power3.out" }, "< ")    
       .to('#smoke2, #smoke1, #smoke3, #smoke4', 2, {autoAlpha: 0, ease: "power3.out" }, "<+0.75")     
-      .to('#wrap', 1, {autoAlpha: 0, ease: "power3.out" }, "<-0.5")     
+      .to('#wrap', 1, {autoAlpha: 0, ease: "power3.out" }, "<-1")     
       
       
       .from('#txt-3-1', 0.75, { y: 20, autoAlpha: 0, ease: "power3.out" }, "<+0.5")
