@@ -322,13 +322,13 @@
           #storeLocator{
             width: 25%;
             left: 7%;
-            bottom: 20%
+            bottom: 35%
           }
 
 
           .wrapTimer{
             left: 38.6%;
-            top: 68%;
+            top: 58%;
           }
 
           .textTimer{
@@ -393,7 +393,6 @@
                     <div id="logo" class="positionAb"> <img src="images/logo.png" alt=""> </div>
                     <div id="text-1-1" class="positionAb"> <img src="images/text-1-1.png" alt=""> </div>
                     <div id="text-1-2" class="positionAb"> <img src="images/text-1-2.png" alt=""> </div>
-                    <div id="text-1-3" class="positionAb"> <img src="images/text-1-3.png" alt=""> </div>
 
                   <div class="wrapTimer positionAb flex col justify-center items-center pointerNone">
                     <div class="textTimer">Timer:</div>
@@ -413,7 +412,6 @@
 
                     <div id="text-2-1" class="positionAb pointerNone"> <img src="images/text-2-1.png" alt=""> </div>
                     <div id="text-2-2" class="positionAb pointerNone"> <img src="images/text-2-2.png" alt=""> </div>
-                    <div id="text-2-3" class="positionAb pointerNone"> <img src="images/text-2-3.png" alt=""> </div>            
                     <div id="botles" class="positionAb pointerNone"> <img src="images/botles.png" alt=""> </div>    
                     <div id="footer" class="positionAb pointerNone"> <img src="images/footer.png" alt=""> </div>            
                     <div id="storeLocator" class="positionAb "> <img src="images/storeLocator.png" alt=""> </div>      
@@ -3213,10 +3211,11 @@ function initHandlers() {
 
 
   var clicktag = document.getElementById('clickTag');
-  clicktag.addEventListener('mouseup', function(event) {             
-      window.open(window.clickTag,'_blank');             
+  clicktag.addEventListener('mouseup', function(event) {       
+
+//      window.open(window.clickTag,'_blank');             
       
-      window.dispatchEvent(new Event("clickTag"));
+//      window.dispatchEvent(new Event("clickTag"));
 
       Enabler.exit('clicktag : Exit');
 
