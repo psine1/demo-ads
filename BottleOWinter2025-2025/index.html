@@ -773,7 +773,17 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // 3. Función para mostrar marcadores más cercanos a una ubicación
 function mostrarMarcadores(userLatLng) {
-  L.marker(userLatLng)
+
+const iconoVerde = L.icon({
+  iconUrl: 'images/marker.png',
+  shadowUrl: 'images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+  L.marker(userLatLng, { icon: iconoVerde })
     .addTo(map)
     .bindPopup('You are here')
     .openPopup();
@@ -790,11 +800,13 @@ function mostrarMarcadores(userLatLng) {
     return { ...lugar, lat, lng, distancia };
   }).filter(Boolean);
 
+
+
   conDistancia
     .sort((a, b) => a.distancia - b.distancia)
     .slice(0, 270)
     .forEach(lugar => {
-      L.marker([lugar.lat, lugar.lng])
+      L.marker([lugar.lat, lugar.lng], { icon: iconoVerde } )
         .addTo(map)
         .bindPopup(`
           <strong>${lugar.name}</strong><br>
@@ -811,6 +823,8 @@ map.once('click', () => {
     navigator.geolocation.getCurrentPosition(
       position => {
         const userLatLng = L.latLng(position.coords.latitude, position.coords.longitude);
+
+
         mostrarMarcadores(userLatLng);
       },
       () => {
