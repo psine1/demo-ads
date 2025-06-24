@@ -260,7 +260,7 @@ function initHandlers() {
 		defaults: { duration: 0.5, ease: 'easeInOut' },
 	  });
 	  tl
-		.to("#cta", 0.2, {x: 0, background: "#1f8cb9", ease:Power2.easeOut}, 0)
+		.to("#cta", 0.2, {background: "#1f8cb9", ease:Power2.easeOut}, 0)
 
 	},
 	leave: function () {
@@ -268,7 +268,7 @@ function initHandlers() {
 		defaults: { duration: 0.5, ease: 'easeInOut' },
 	  });
 	  tl
-		.to("#cta", 0.2, {x: 0, background: "#2aace2", ease:Power2.easeOut}, 0)
+		.to("#cta", 0.2, {background: "#2aace2", ease:Power2.easeOut}, 0)
 
 	},
   };
