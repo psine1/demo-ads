@@ -181,7 +181,7 @@ gsap.set("#wrap-image", {transformOrigin: "80% 40%"})
   const tl_character2 = gsap.timeline({ paused: true });
       tl_character2.timeScale(1.2);  
       tl_character2
-      .to("#wrap-image", {duration: 0.5, scale: 1.1, repeat: 1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "80% 40%", ease: "power1.inOut"}, "<")            
+  //    .to("#wrap-image", {duration: 0.5, scale: 1.1, repeat: 1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "80% 40%", ease: "power1.inOut"}, "<")            
       .fromTo("#char-2-armL", {rotation: -12, transformOrigin: "50% 20%"}, {duration: 0.25, rotation: 12, repeat: -1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "50% 20%", ease: "none"}, "<")      
       .fromTo("#char-2-armL", {y: -2, transformOrigin: "50% 20%"}, {duration: 0.5, y: 2, repeat: -1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "50% 20%", ease: "none"}, "<")      
       .fromTo("#char-2-torso", {y: -2, rotation: 2, transformOrigin: "50% 50%"}, {duration: 0.5, y: 2, rotation: -2, repeat: -1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "50% 50%", ease: "none"}, "<")      
@@ -195,7 +195,7 @@ gsap.set("#wrap-image", {transformOrigin: "80% 40%"})
   const tl_character3 = gsap.timeline({ paused: true });
       tl_character3.timeScale(1.2);  
       tl_character3
-      .to("#wrap-image", {duration: 0.5, scale: 1.1, repeat: 1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "80% 40%", ease: "power1.inOut"}, "<")      
+  //    .to("#wrap-image", {duration: 0.5, scale: 1.1, repeat: 1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "80% 40%", ease: "power1.inOut"}, "<")      
       .fromTo("#char-3-armL", {rotation: -12, transformOrigin: "50% 15%"}, {duration: 0.25, rotation: 12, repeat: -1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "50% 15%", ease: "none"}, "<")      
       .fromTo("#char-3-armL", {y: -2, transformOrigin: "50% 20%"}, {duration: 0.5, y: 2, repeat: -1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "50% 20%", ease: "none"}, "<")      
       .fromTo("#char-3-torso", {y: -2, rotation: 2, transformOrigin: "50% 50%"}, {duration: 0.5, y: 2, rotation: -2, repeat: -1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "50% 50%", ease: "none"}, "<")      
@@ -210,7 +210,7 @@ gsap.set("#wrap-image", {transformOrigin: "80% 40%"})
   const tl_character4 = gsap.timeline({ paused: true });
       tl_character4.timeScale(1.2);  
       tl_character4
-      .to("#wrap-image", {duration: 0.5, scale: 1.1, repeat: 1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "80% 40%", ease: "power1.inOut"}, "<")      
+//      .to("#wrap-image", {duration: 0.5, scale: 1.1, repeat: 1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "80% 40%", ease: "power1.inOut"}, "<")      
       .fromTo("#char-4-armL", {rotation: -12, transformOrigin: "50% 20%"}, {duration: 0.25, rotation: 12, repeat: -1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "50% 20%", ease: "none"}, "<")      
       .fromTo("#char-4-armL", {y: -2, transformOrigin: "50% 20%"}, {duration: 0.5, y: 2, repeat: -1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "50% 20%", ease: "none"}, "<")      
       .fromTo("#char-4-torso", {y: -2, rotation: 2, transformOrigin: "50% 50%"}, {duration: 0.5, y: 2, rotation: -2, repeat: -1, yoyo: true, repeatDelay: 0.1,  transformOrigin: "50% 50%", ease: "none"}, "<")      
@@ -228,14 +228,28 @@ gsap.set("#wrap-image", {transformOrigin: "80% 40%"})
 
 
 
-                gsap.set("#button", { autoAlpha: 0, scale: 1.35})      
+          gsap.set("#button", { autoAlpha: 0, scale: 1.35})      
 
-  
+          var charactersMultitime = gsap.timeline({paused: true});
+            charactersMultitime.timeScale(1);
+            charactersMultitime
+            .add(function (){tl_character1.play()}, 0)
+            .add(function (){tl_character2.play()}, "<+0.5")
+            .add(function (){tl_character3.play()}, "<+0.5")
+            .add(function (){tl_character4.play()}, "<+0.5")
+
+            
 
       var clickCounter = document.getElementById('clickCounter');
 
       clickCounter.addEventListener('click', function (e) {
+
+          charactersMultitime.play();
+          gsap.to("#clickCounter", 0.01, {autoAlpha: 0, ease: "power3.out" })    
+          gsap.to("#button", {duration: 0.5, autoAlpha: 1, scale: 1, delay: 2, ease: "power3.out"}, "<")     
+          
         
+        /*
         flag++;
 
         if (flag === 1) {
@@ -252,7 +266,9 @@ gsap.set("#wrap-image", {transformOrigin: "80% 40%"})
                 gsap.to("#clickCounter", 0.01, {autoAlpha: 0, ease: "power3.out" })    
                 gsap.to("#button", {duration: 0.5, autoAlpha: 1, scale: 1, delay: 1, ease: "power3.out"}, "<")      
 
-        }                
+        }           
+                
+        */
 
       });
 
