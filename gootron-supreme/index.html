@@ -260,7 +260,7 @@
 
 
 
-          <div id="clicktag" class="positionAb"></div>
+          <div id="clickTag" class="positionAb"></div>
           <div id="playbutton" class="positionAb"><img src="images/playbutton.png" alt=""></div>      
           
 
@@ -309,7 +309,7 @@
 
 
 <script>
-var clickTag = "https://www.google.com/";
+var clickTag = "https://ad.doubleclick.net/ddm/trackclk/N2156257.4430832LIVEWIREGROUP/B33808893.424997722;dc_trk_aid=619347449;dc_trk_cid=239276798;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=$%7BGDPR%7D;gdpr_consent=$%7BGDPR_CONSENT_755%7D;ltd=;dc_tdv=1";
 </script>
 <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
 <script defer>
@@ -544,6 +544,7 @@ function endFrameAnim (toyNum, splashNum, meteoritoNum){
       tl_.timeScale(1);  
       tl_
       .to("#thrash, #blazagon, #pantaro", 0.25, {y: -50, autoAlpha: 0, ease: "power3.out" }, "+0.5")    
+      .to("#clickTag", { autoAlpha: 1, zIndex: "999", duration: 0.15, ease: "sine.inOut" }, "<")    
 
       .to("#toy1", 0.35, {x: 390, y: -59, ease: "power3.out" }, "<+0.4")    
 
@@ -685,7 +686,7 @@ function playGame(){
 
 
     gsap.to("[id*='select']", { autoAlpha: 1, duration: 0.15, ease: "sine.inOut" }, "<+0.1")       
-    gsap.to("#clicktag", { autoAlpha: 0, duration: 0.15, ease: "sine.inOut" }, "<+0.1")    
+    gsap.to("#clickTag", { autoAlpha: 0, duration: 0.15, ease: "sine.inOut" }, "<+0.1")    
 
   const tl_turbwave = gsap.timeline({});
       tl_turbwave.timeScale(1);  
@@ -803,7 +804,7 @@ linesTl.timeScale(8);
 linesTl.seek(200);
 
 const mainTl = gsap.timeline();
-mainTl.add([gradShakeTl, ballShakeTl, ballTl, linesTl], 0);
+//mainTl.add([gradShakeTl, ballShakeTl, ballTl, linesTl], 0);
 
 
 /**/
@@ -824,9 +825,9 @@ function initHandlers() {
 
 
 
-  var clicktag = document.getElementById('clickTag');
+  let clicktag = document.getElementById('clickTag');
 
-  /*
+  
   clicktag.addEventListener('mouseup', function(event) {             
       window.open(window.clickTag,'_blank');             
       
@@ -837,7 +838,7 @@ function initHandlers() {
 
   })
 
-  */
+  
 
 /*
 
@@ -849,8 +850,6 @@ function initHandlers() {
       a.leave();
   });
 
-
-*/
 
   var a = {
     enter: function () {
@@ -872,6 +871,11 @@ function initHandlers() {
 
     },
   };
+
+
+
+*/
+
 
 }
 
