@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1">
+<meta name="ad.size" content="width=808,height=376">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>Responsive</title>
+<!-- write your code here -->
+<script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+<script src="js/createjs.min.js"></script>
+<script src="js/func_click.js"></script>
+<script src="js/soundmanager2.js"></script>
+<script src="1400x1400.js?1742370948010"></script>
+
+<script>
+var wS;var hS;
+	var MCTop;
+getScr();
+function getScr(){
+	if (self.innerHeight){ // all except Explorer
+		scnWid = self.innerWidth;
+		scnHei = self.innerHeight;
+	}else if (document.documentElement && document.documentElement.clientHeight){// Explorer 6 Strict Mode
+		scnWid = document.documentElement.clientWidth;
+		scnHei = document.documentElement.clientHeight;
+	}else if (document.body){ // other Explorers
+		scnWid = document.body.clientWidth;
+		scnHei = document.body.clientHeight;
+	}
+	return [scnWid,scnHei];
+};
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("19467A437546BB42940B8D073344180E");
+	var lib=comp.getLibrary();
+	createjs.MotionGuidePlugin.install();var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib._1400x1400();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	
+const widthS = window.innerWidth || document.documentElement.clientWidth ||
+	document.body.clientWidth;
+
+	
+	hS = scnHei;
+	wS = scnWid;	
+	console.log("Init "+wS +"|"+hS +" | "+widthS);
+	
+	
+	
+	var src;
+	if(hS < wS)	
+	{
+		screen = "ngang";
+		wB = wS;		//w*sRatio+'px';				
+		hB = wS;//*640/1400;
+	}	
+	else
+	{		
+		screen = "doc";
+		hB = hS;		//w*sRatio+'px';				
+		wB = hS;//*640/1400;
+	}	
+	canvas = document.getElementById("canvas");	
+	canvas.style.width = wB+'px';	
+	canvas.style.height = hB+'px';		
+	//canvas.style.left = (wS - wB)/2+'px';
+	canvas.style.top =  (hS - hB)/2+'px';	
+	if(hS < wS)	
+	{
+		canvas.style.top =  (hS - hB +14)/2+'px';
+		//canvas.style.left = '0px';			
+	}			
+	MCTop = (hS - hB +14)/2;
+	console.log(MCTop);
+	//AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+
+var screen = "";
+function trackingAbdClick_Mobile()
+{	
+	window.open(click_url);
+	parent.postMessage({func_type:'trackingAbdClick3rd_IFRAME', param1:banner_id},"*");	
+} 
+</script>
+
+<script>
+//SK
+function trackingInteractive(sts,b)
+{	
+	var	temp = "";
+	switch(sts)
+	{				
+		case "Start_Game":	
+			Enabler.counter('Start_Game');
+			break;
+		case "Congrats":
+			Enabler.counter('Congrats');
+			break;	
+		case "ThanksForPlay":
+			Enabler.counter('ThanksForPlay');
+			break;
+		case "auto":
+			Enabler.counter('Play_Auto');
+			break;	
+		case "Jumb":
+			Enabler.counter('Jumb');
+			break;	
+		case "Hit_Obj":
+			Enabler.counter('Hit_Obj');
+			break;			
+		case "Score":
+			Enabler.counter('Score');
+			break;		
+	}	
+	console.log("trackingInteractive "+sts );
+}
+function trackingExtend(url){if(url !=""){var el=document.createElement("iframe"); el.setAttribute("id", "ifrm"); el.setAttribute("src", url); el.setAttribute("width", 0); el.setAttribute("height", 0); el.setAttribute("display", "none"); document.body.appendChild(el);}}; 
+
+function trackingClick()
+{	
+	console.log("call track click");
+	Enabler.exit("ClickTag", "https://ad.doubleclick.net/ddm/trackclk/N2044034.3201872APEX/B33617202.421285440;dc_trk_aid=613576572;dc_trk_cid=235352733;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};gpp=${GPP_STRING_755};gpp_sid=${GPP_SID};ltd=;dc_tdv=1");
+}
+
+</script>
+<style> 
+body {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+</style>
+</head>
+<body onload="init();" style="margin:0px; overflow:hidden">
+	<div id="animation_container" style="background-color:transparent;width: 100vw;height: 100vh;overflow: hidden;position: relative;">
+	<div id="html5Div"></div><div id="div_canvas"></div>
+		<canvas id="canvas" width="1400" height="1400" style="position: absolute; display: block; background-color:transparent;"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1400px; height:1400px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+</body>
+</html>
+
