@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        700x1280-std-dcm
+    </title>
+    <!-- duck Template Ver.1.2 -->
+    <meta name="ad.size" content="width=700,height=1280">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <style>
+
+
+
+    </style>
+      <link rel="stylesheet" href="styles.css"> 
+
+
+</head>
+
+<body>
+
+<div class="pec">
+  <div id="scale-wrap">
+
+
+    <div id="loader-container">
+            <div class="circle"></div>
+    </div>
+        <div class="banner positionAb" id="banner_content">
+
+
+          <div id="clickTag" class="positionAb"></div>
+
+          <div class="fr1 positionAb">
+            <div id="bg" class="positionAb"><img src="images/bg.jpg" alt=""></div>
+            <div id="logo" class="positionAb"><img src="images/logo.png" alt=""></div>
+            <div id="title" class="positionAb"><img src="images/title.png" alt=""></div>
+            <div id="product" class="positionAb"><img src="images/product.png" alt=""></div>
+            <div id="buttonPlay" class="positionAb"><img src="images/buttonPlay.png" alt=""></div>
+          </div>
+
+
+          <div class="fr3 positionAb">
+
+            <div class="positionAb bgGame"></div>
+              
+              <div id="instruction2" class="positionAb">
+                <img src="images/instruction2.png" alt="">
+              </div>
+
+              <div id="instruction3" class="positionAb">
+                <img src="images/instruction3.png" alt="">
+              </div>              
+
+                  <div class="hud">
+                    <div style="display:flex; gap:8px;">
+                      <div class="pill" id="leftPill">Ingredients left: <span id="leftCount">4</span></div>
+                      </div>
+                  </div>    
+                  
+                  <div id="logoGame" class="positionAb"><img src="images/logo.png" alt=""></div>
+
+
+              <div class="wrap positionAb">
+                <div id="game" aria-label="Maze Hotdog (DOM)">
+
+
+                  <div id="goal" title="Meta"></div>
+
+                  <!-- Laberinto -->
+                  <svg id="stage" viewBox="0 0 900 1100" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                      <filter id="wallInset" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#b5911d" flood-opacity="0.9"/>
+                      </filter>
+                    </defs>
+                    <g id="maze"></g>
+                  </svg>
+
+                  <!-- Collectibles container -->
+                  <div id="ingredientsLayer" class="positionAb" aria-hidden="true"></div>
+
+                  <!-- Contenedor + imagen -->
+                  <div id="dog" aria-label="Hotdog"><div id="dogInner"></div></div>
+
+                  <!-- Win overlay -->
+                </div>
+              </div>
+
+
+
+          </div>      
+
+
+          <div class="fr2 positionAb">
+            <div id="wrapInstructios" class="positionAb">
+                 <div class="overlay overlay1"></div>
+                <div id="instruction1" class="positionAb">
+                  <div id="instruction1Inner">
+                    <img src="images/instruction1.png" alt="">
+                  </div>       
+                  <div id="startGame">
+                      <img src="images/startGame.png" alt="">
+                    </div>
+                </div>              
+            </div>    
+          </div>      
+          
+          
+          <div class="fr4 positionAb">
+            <div class="wrapEnd positionAb">
+              <div id="bgEnd" class="positionAb"><img src="images/bgEnd.jpg" alt=""></div>
+              <div id="titleEnd1" class="positionAb"><img src="images/titleEnd1.png" alt=""></div>
+              <div id="titleEnd2" class="positionAb"><img src="images/titleEnd2.png" alt=""></div>
+              <div id="productEnd" class="positionAb"><img src="images/productEnd.png" alt=""></div>
+            </div>
+              <div id="logoEnd" class="positionAb"><img src="images/logo.png" alt=""></div>
+            
+            <div id="textEnd1" class="positionAb"><img src="images/textEnd1.png" alt=""></div>
+            <div id="textEnd2" class="positionAb"><img src="images/textEnd2.png" alt=""></div>
+            
+            <div id="footer" class="positionAb"><img src="images/footer.png" alt=""></div>
+            <div class="overlay overlayend"></div>
+
+          </div>
+
+
+
+        </div>      
+        
+</div>      
+</div>              
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+
+
+
+
+<script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+<script src="main.js" defer></script>
+
+
+
+</html>
