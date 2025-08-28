@@ -109,7 +109,12 @@ var endframe = 0;
   const tl_fr4 = gsap.timeline({paused: true});
       tl_fr4.timeScale(1);  
       tl_fr4
-      .from('.fr4', 0.32, {autoAlpha: 0, ease: "power3.out" }, "<+0.5")   
+
+      .from('.fr4', 0.35, {autoAlpha: 0, ease: "power3.out" }, "<+0.5")   
+      .to('.fr3', 0.3, {autoAlpha: 0, ease: "power3.out" }, "<")   
+
+
+
       .to('.overlayend', 5, {autoAlpha: 0, ease: "power3.out" }, "<")   
 
       .from('.wrapEnd', 10, {scale: 1.3, transformOrigin: "50% 30%", rotation: 0.05, ease: "power3.out" }, "<")          
@@ -149,7 +154,7 @@ var endframe = 0;
   // ===== Maze =====
   const MAZE=[
     "########.########",
-    "#..............#",
+    "#...............#",
     "#.###.#...#######",
     "#.#...#...#...#.#",
     "#.#.#####.#.###.#",
