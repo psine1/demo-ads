@@ -336,7 +336,7 @@ var endframe = 0;
 
     if (isWall(nx,ny)){
 //      status.textContent='¡Pared!';
-      gsap.fromTo(game,{x:0},{x:6,duration:0.05,repeat:3,yoyo:true,onComplete(){ gsap.set(game,{x:0}); }});
+   //   gsap.fromTo(game,{x:0},{x:6,duration:0.05,repeat:3,yoyo:true,onComplete(){ gsap.set(game,{x:0}); }});
       state.moving=false; return;
     }
 
