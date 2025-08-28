@@ -106,7 +106,7 @@ var endframe = 0;
 
 
 
-  const tl_fr4 = gsap.timeline({paused: false});
+  const tl_fr4 = gsap.timeline({paused: true});
       tl_fr4.timeScale(1);  
       tl_fr4
 
