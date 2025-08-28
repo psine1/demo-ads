@@ -106,23 +106,23 @@ var endframe = 0;
 
 
 
-  const tl_fr4 = gsap.timeline({paused: true});
+  const tl_fr4 = gsap.timeline({paused: false});
       tl_fr4.timeScale(1);  
       tl_fr4
 
       .from('.fr4', 0.35, {autoAlpha: 0, ease: "power3.out" }, "<+0.5")   
-      .to('.fr3', 0.3, {autoAlpha: 0, ease: "power3.out" }, "<")   
+      .from('.fr4', 0.01, {zIndex: "999" }, "<")   
 
-
+     // .to('.fr3', 0.3, {autoAlpha: 0, ease: "power3.out" }, "<")   
 
       .to('.overlayend', 5, {autoAlpha: 0, ease: "power3.out" }, "<")   
 
-      .from('.wrapEnd', 10, {scale: 1.3, transformOrigin: "50% 30%", rotation: 0.05, ease: "power3.out" }, "<")          
+     // .from('.wrapEnd', 10, {scale: 1.3, transformOrigin: "50% 30%", rotation: 0.05, ease: "power3.out" }, "<")          
       .from('#productEnd', 2, {x: -50, y: -50, ease: "power3.out" }, "<")          
-      .from('#titleEnd1', 0.5, {y: 100, ease: "power3.out" }, "<")          
-      .from('#titleEnd2', 0.5, {y: 100, ease: "power3.out" }, "<+0.2")    
+      .from('#titleEnd1', 0.5, {y: 190, ease: "power3.out" }, "<+0.2")          
+      .from('#titleEnd2', 0.5, {y: 190, ease: "power3.out" }, "<+0.2")    
       
-      .from('#textEnd1', 0.5, {scale: 2, ease: "power3.out" }, "<")          
+      .from('#textEnd1', 0.5, {scale: 2, ease: "power3.out" }, "<+1")          
       .from('#textEnd1', 0.15, {autoAlpha: 0, ease: "power3.out" }, "<")          
       .from('#textEnd2', 0.5, {scale: 2, ease: "power3.out" }, "<+0.3")          
       .from('#textEnd2', 0.15, {autoAlpha: 0, ease: "power3.out" }, "<")          
