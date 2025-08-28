@@ -110,10 +110,8 @@ var endframe = 0;
       tl_fr4.timeScale(1);  
       tl_fr4
 
-      .from('.fr4', 0.35, {autoAlpha: 0, ease: "power3.out" }, "<+0.5")   
+      .from('.fr4', 0.35, {autoAlpha: 0, ease: "power3.out" }, "<")   
       .from('.fr4', 0.01, {zIndex: "999" }, "<")   
-
-     // .to('.fr3', 0.3, {autoAlpha: 0, ease: "power3.out" }, "<")   
 
       .to('.overlayend', 5, {autoAlpha: 0, ease: "power3.out" }, "<")   
 
