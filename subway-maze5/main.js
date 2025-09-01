@@ -92,7 +92,11 @@ var endframe = 0;
       .from('#startGame', 1, { scale: 0.5, ease: "bounce.out" }, "<+0.35")    
       .from('#startGame', 0.5, {autoAlpha: 0, ease: "bounce.out" }, "<")   
        .from('#game', 1, {autoAlpha: 0, ease: "power3.out" }, "<")    
+             .set("#game", { display: 'block' }, "<")
         .to('.fr2', 1, {zIndex: "999", ease: "power3.out" }, "<")    
+        .to('.fr1', 1, {autoAlpha: 0, ease: "power3.out" }, "<")    
+
+
 
   const tl_fr3 = gsap.timeline({paused: true});
       tl_fr3.timeScale(1);  
@@ -102,7 +106,8 @@ var endframe = 0;
       .to('#startGame', 1, { scale: 0.5, ease: "power3.inOut" }, "<+0.35")    
       .to('#startGame', 0.5, {autoAlpha: 0, ease: "power3.inOut" }, "<")   
       .to('.fr2', 0.01, {autoAlpha: 0, ease: "power3.out" }, ">")   
-      .from('#instruction2', 1, {y: -2300, ease: "power3.out" }, "<")    
+      .from('#instruction2', 1, {y: -2300, ease: "power3.out" }, "<")  
+      
 
 
 
@@ -516,6 +521,11 @@ function initHandlers() {
 
   
   clicktag.addEventListener('mouseup', function(event) {             
+
+     clicktag.addEventListener('mouseup', function(event) {             
+      window.open(window.clickTag,'_blank');              
+  })
+
       
       window.dispatchEvent(new Event("clickTag"));
 
