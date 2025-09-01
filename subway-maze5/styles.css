@@ -20,6 +20,10 @@
 
 
 
+div{
+    pointer-events: none;
+}
+
             #loader-container {
                 
                 width: 700px;
@@ -98,6 +102,7 @@
                 box-sizing: border-box;
                 top: -1px;
                 left: -1px;
+                pointer-events: auto;
             }
 
             #loader-container .circle {
@@ -225,6 +230,7 @@
   height: auto;
   left: 104px;
   top: 958px;
+  pointer-events: auto;
 }
 
 .fr2{
@@ -270,6 +276,8 @@
         display: flex;
     justify-content: center;
     align-items: center;
+      pointer-events: auto;
+
 }
 
 .overlay{
@@ -376,6 +384,8 @@
     position:relative; width:min(100vh, 720px); aspect-ratio:9/11; 
     border-radius:18px;
     overflow:hidden; user-select:none; touch-action:none;
+      pointer-events: auto;
+
   }
   .hud{ position:absolute; right:25px; top:20px; display:flex; gap:8px; justify-content:space-between; color:var(--ui); font-size: 22px; font-weight:600; text-shadow:0 1px 1px #000; z-index:0 }
   #leftCount{font-size: 30px; color: #f2f74b;}
