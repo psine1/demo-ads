@@ -118,18 +118,18 @@ var endframe = 0;
       .to('.fr2', 0.01, {autoAlpha: 0, ease: "power3.out" }, ">")   
       .from('#instruction2', 1, {y: -2300, ease: "power3.out" }, "<")  
       .add( function (){ 
-            let timeLeft = 30;
-    const display = document.getElementById("countdown");
+            let timeLeft = 20;
+            const display = document.getElementById("countdown");
 
-    const timer = setInterval(() => {
-      timeLeft--;
-      display.textContent = timeLeft;
+            const timer = setInterval(() => {
+              timeLeft--;
+              display.textContent = timeLeft;
 
-      if (timeLeft <= 0) {
-        gsap.set("#game", { display: 'none' });
-        tl_fr4.play();
-      }
-    }, 1000);
+              if (timeLeft <= 0) {
+                gsap.set("#game", { display: 'none' });
+                tl_fr4.play();
+              }
+            }, 1000);
        }, "<" )
       
 
