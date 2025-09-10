@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Ad Dual Orientation (640×1080 | 1024×600)</title>
+  <!-- Si tu ad server requiere ad.size fija, deberás generar dos creatividades; este template es para entornos donde el contenedor puede ser portrait o landscape. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <style>
+    :root{
+      --bg:#0b0b0c; --ink:#fff; --accent:#ffd74a; --accent2:#5eead4;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:#111;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    /*
+      El contenedor .ad debe tener su tamaño definido por el entorno (slot del ad).
+      Este template escala y centra el contenido a 640×1080 (portrait) o 1024×600 (landscape)
+      según la relación de aspecto del contenedor real.
+    */
+    .ad{
+      position:relative;
+      width:100%; height:100%;
+      overflow:hidden; background:var(--bg);
+      color:var(--ink);
+    }
+    /* Stage escalable */
+    #stage{ position:absolute; left:0; top:0; transform-origin:0 0; }
+
+    /* Helpers visuales para ver límites base */
+    .frame{position:absolute; inset:0; outline:1px dashed #ffffff33; pointer-events:none}
+
+    /* Visibilidad por orientación */
+    .is-portrait .only-portrait{display:block}
+    .is-portrait .only-landscape{display:none}
+    .is-landscape .only-portrait{display:none}
+    .is-landscape .only-landscape{display:block}
+
+    /* Demo styles */
+    .panel{
+      position:absolute; inset:0; display:grid; place-items:center; padding:24px;
+      text-align:center; gap:12px; background:linear-gradient(135deg,#14151a,#0b0b0c);
+    }
+    h1{margin:0; font-size:42px; line-height:1.05; font-weight:800}
+    p{margin:0; font-size:18px; opacity:.9}
+
+    .cta{ display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:999px;
+          background:var(--accent); color:#000; font-weight:800; text-decoration:none }
+    .cta .dot{width:10px; height:10px; border-radius:50%; background:#000}
+
+    /* Layout específico por orientación (opcional) */
+    .only-landscape .stack{ display:grid; grid-template-columns:1.2fr .8fr; gap:20px; width:min(88%,920px) }
+    .card{ background:#181a20; border:1px solid #ffffff14; border-radius:16px; padding:16px }
+    .title{ font-size:28px; font-weight:800; margin-bottom:8px }
+
+      .logo{
+        width: 200px;
+        height: 100px;
+        top: 300px;
+        left: -100px;
+      }
+      .positionAb{
+        position: absolute;
+      }
+
+      img{
+        width: 100%;
+      }
+
+  </style>
+</head>
+<body>
+  <div class="ad" id="ad">
+    <!-- Escenario base que escalamos: su tamaño se ajusta en JS según orientación -->
+    <div id="stage">
+      <!-- CONTENIDO PORTRAIT 640×1080 -->
+      <section id="viewPortrait" class="only-portrait panel" aria-label="Vista Portrait 640×1080">
+        <div class="card" style="width:min(92%,520px)">
+          <div class="title">Formato Portrait</div>
+          <h1>Tu mensaje principal en 640×1080</h1>
+          <p>Ideal para stories / vertical feed / DOOH vertical.</p>
+          <a class="cta" href="#" id="ctaPortrait" role="button" aria-label="CTA Portrait">
+            <span class="dot"></span> Comprar ahora
+          </a>
+        </div>
+        <div class="frame" aria-hidden="true"></div>
+      </section>
+
+      <!-- CONTENIDO LANDSCAPE 1024×600 -->
+      <section id="viewLandscape" class="only-landscape panel" aria-label="Vista Landscape 1024×600">
+        <div class="stack">
+          <div class="card">
+            <div class="title">Formato Landscape</div>
+            <h1>Mensaje clave 1024×600</h1>
+            <p>Pensado para banners apaisados / page grabber horizontal.</p>
+            <a class="cta" href="#" id="ctaLandscape" role="button" aria-label="CTA Landscape">
+              <span class="dot"></span> Ver más
+            </a>
+          </div>
+          <div class="card">
+            <p>Espacio para oferta / precio / logo / rating / features.</p>
+          </div>
+        </div>
+                <div class="positionAb logo"><img src="images/logo.png" alt=""></div>
+
+        <div class="frame" aria-hidden="true"></div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // === Configuración de bases ===
+    const BASES = {
+      portrait:  { w: 640,  h: 1080 },
+      landscape: { w: 1024, h: 600  }
+    };
+
+    const ad   = document.getElementById('ad');
+    const stage= document.getElementById('stage');
+
+    // Clase de orientación en <body> para togglear CSS de contenido
+    function setOrientationClass(kind){
+      document.body.classList.remove('is-portrait','is-landscape');
+      document.body.classList.add(kind === 'portrait' ? 'is-portrait' : 'is-landscape');
+    }
+
+    // Decide orientación por relación de aspecto del contenedor real
+    function currentOrientation(){
+      const w = ad.clientWidth, h = ad.clientHeight;
+      if (!w || !h) return 'landscape';
+      return (w / h) >= 1 ? 'landscape' : 'portrait';
+    }
+
+    function fit(){
+      const kind = currentOrientation();
+      const base = BASES[kind];
+      // fija tamaño lógico de la stage
+      stage.style.width  = base.w + 'px';
+      stage.style.height = base.h + 'px';
+
+      // calcula escala para que entre completo en el contenedor
+      const cw = ad.clientWidth, ch = ad.clientHeight;
+      const scale = Math.min(cw / base.w, ch / base.h);
+      const ox = (cw - base.w * scale) / 2;
+      const oy = (ch - base.h * scale) / 2;
+
+      stage.style.transform = `translate(${ox}px, ${oy}px) scale(${scale})`;
+
+      setOrientationClass(kind);
+    }
+
+    
+
+    // Interacciones demo (reemplazar por tu tracking / lógica real)
+    function wireInteractions(){
+      document.getElementById('ctaPortrait')?.addEventListener('click', e=>{
+        e.preventDefault();
+        // TODO: Tracking portrait (ej. Enabler.exit('Click_Portrait'))
+        console.log('CTA Portrait');
+      });
+      document.getElementById('ctaLandscape')?.addEventListener('click', e=>{
+        e.preventDefault();
+        // TODO: Tracking landscape (ej. Enabler.exit('Click_Landscape'))
+        console.log('CTA Landscape');
+      });
+    }
+
+    // Inicialización
+    function init(){
+      wireInteractions();
+      fit();
+      window.addEventListener('resize', fit);
+      window.addEventListener('orientationchange', fit);
+      // Para entornos embebidos que cambian el contenedor asincrónicamente
+      const ro = new ResizeObserver(fit); ro.observe(ad);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  </script>
+</body>
+</html>
