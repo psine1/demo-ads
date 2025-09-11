@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Ad Dual Orientation (640×1080 | 1024×600)</title>
+  <!-- Si tu ad server requiere ad.size fija, deberás generar dos creatividades; este template es para entornos donde el contenedor puede ser portrait o landscape. -->
+  <!--
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  -->
+
+    <meta name="ad.size" content="width=480,height=320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="loader-container">
+    <div class="circle"></div>
+  </div>
+
+  <div class="ad" id="ad">
+    <!-- Escenario base que escalamos: su tamaño se ajusta en JS según orientación -->
+    <div id="stage">
+      <!-- CONTENIDO PORTRAIT 640×1080 -->
+      <section id="viewPortrait" class="only-portrait panel" aria-label="Vista Portrait 640x1080">
+              <div class="positionAb rotate"><img src="images/rotate.png" ></div>
+        <div class="frame" aria-hidden="true"></div>
+      </section>
+
+      <!-- CONTENIDO LANDSCAPE 1024×600 -->
+      <section id="viewLandscape" class="only-landscape panel" aria-label="Vista Landscape 1024x600">
+
+                <div class="positionAb bg"><img src="images/bg-game.jpg" ></div>
+
+                <div class="positionAb speed">
+                  <svg id="scene" viewBox="0 0 1600 1094">
+                    <!-- TUS PATHS -->
+                    <path class="st0" d="M890.29,475.03s332.03-302.68,434.75-557.66"/>
+                    <path class="st0" d="M890.29,487.87s344.87-220.13,561.32-649.38"/>
+                    <path class="st0" d="M1723.11-108.31C1380.08,405.32,890.29,498.88,890.29,498.88c0,0,475.11-67.87,1120.82-434.75"/>
+                    <path class="st0" d="M890.29,492.23s484.28-119.46,843.36-716.56"/>
+                    <path class="st0" d="M890.29,504.15s544.82-106.17,1172.18-307.95"/>
+                    <path class="st0" d="M890.29,513.86s691.57-147.29,1208.87-163.68"/>
+                    <path class="st0" d="M890.29,526.39s812.64-47.69,1172.18,249.48"/>
+                    <path class="st0" d="M890.29,530.37s583.34-29.66,1031.85,264.76"/>
+                    <path class="st0" d="M893.96,521.5s915.36-158.37,1220.79-108.84"/>
+                    <path class="st0" d="M890.29,535.8s709.91-18.57,935.54,403.34"/>
+                    <path class="st0" d="M1754.29,973.99c-302.68-478.78-864-433.38-864-433.38,0,0,869.41,81.17,307.22,636.99"/>
+                    <path class="st0" d="M899.69,523.58s896.79-132.74,1148.1-61.29"/>
+                    <path class="st0" d="M890.29,547s601.68-139.84,786.96,713.15"/>
+                    <line class="st0" x1="914.45" y1="523.58" x2="1690.09" y2="475.03"/>
+                    <path class="st0" d="M927.63,523.58s625.8-21.16,741.36,0"/>
+                    <path class="st0" d="M1473.75,1177.61c154.79-630.61-574.05-630.61-574.05-630.61"/>
+                    <path class="st0" d="M893.96,547s948.38-24.27,276.99,808.54"/>
+                    <path class="st0" d="M983.85,544.74s675.09,117.4,168.78,616.36"/>
+                    <path class="st0" d="M973.76,544.74s786.04,107.31-36.69,701.66"/>
+                    <path class="st0" d="M927.63,510.8s865.18,124.74-150.15,768.61"/>
+                    <path class="st0" d="M903.63,510.8s922.2,145.38-226.59,757.61"/>
+                    <path class="st0" d="M924.69,499.31s881.89,198.15-346.7,678.3"/>
+                    <path class="st0" d="M920.25,501.02s880.82,173.04-412.43,640.82"/>
+                    <path class="st0" d="M899.69,514.17S1520.41,316.36,1883.62-35.85"/>
+                    <path class="st0" d="M890.29,508.51s427.41-224.25,730.09-684.69"/>
+                    <path class="st0" d="M1024.36,546.93s622.62,151.9-609.18,603.16"/>
+                    <path class="st0" d="M940.74,552.08s797.04,86.22-609.02,567.75"/>
+                    <path class="st0" d="M908.18,482.37s369.17-236.64,635.16-658.55"/>
+                    <path class="st0" d="M890.29,479.39s353.58-262.09,507.67-626.68"/>
+
+                    <!-- capa para seguidores -->
+                    <g id="fx"></g>
+                  </svg>                  
+                </div>
+
+                <div class="positionAb sun"><img src="images/sun.png" ></div>
+
+
+
+                <div class="game positionAb">
+
+                    <div class="button-players positionAb">
+                        <div class="positionAb selectPlayer-1"><img src="images/select-player1.png" ></div>
+                        <div class="positionAb selectPlayer-2"><img src="images/select-player2.png" ></div>
+                        <div class="positionAb selectPlayer-3"><img src="images/select-player3.png" ></div>
+                        <div class="positionAb selectPlayer-4"><img src="images/select-player4.png" ></div>
+                        <div class="positionAb selectPlayer-5"><img src="images/select-player5.png" ></div>
+                        <div class="positionAb selectPlayer-6"><img src="images/select-player6.png" ></div>
+                        <div class="positionAb selectPlayer-7"><img src="images/select-player7.png" ></div>
+                        <div class="positionAb selectPlayer-8"><img src="images/select-player8.png" ></div>
+                    </div>
+
+                    <div class="wrap-players positionAb">
+
+                        <div id="player-1" class="positionAb">
+                            <div id="productName1" class="positionAb"><img src="images/productName1.png" ></div>
+                            <div id="car1" class="positionAb"><img src="images/car1.png" ></div>
+                            <div id="man1" class="positionAb"><img src="images/man1.png" ></div>
+                            <div id="boxToy1" class="positionAb"><img src="images/boxToy1.png" ></div>
+                        </div>  
+
+                        <div id="player-2" class="positionAb">
+                            <div id="productName2" class="positionAb"><img src="images/productName2.png" ></div>
+                            <div id="car2" class="positionAb"><img src="images/car2.png" ></div>
+                            <div id="man2" class="positionAb"><img src="images/man2.png" ></div>
+                            <div id="boxToy2" class="positionAb"><img src="images/boxToy2.png" ></div>
+                        </div>    
+                        
+                        <div id="player-3" class="positionAb">
+                            <div id="productName3" class="positionAb"><img src="images/productName3.png" ></div>
+                            <div id="car3" class="positionAb"><img src="images/car3.png" ></div>
+                            <div id="man3" class="positionAb"><img src="images/man3.png" ></div>
+                            <div id="boxToy3" class="positionAb"><img src="images/boxToy3.png" ></div>
+                        </div>         
+                        
+                        <div id="player-4" class="positionAb">
+                            <div id="productName4" class="positionAb"><img src="images/productName4.png" ></div>
+                            <div id="car4" class="positionAb"><img src="images/car4.png" ></div>
+                            <div id="man4" class="positionAb"><img src="images/man4.png" ></div>
+                            <div id="boxToy4" class="positionAb"><img src="images/boxToy4.png" ></div>
+                        </div>    
+
+                        <div id="player-5" class="positionAb">
+                            <div id="productName5" class="positionAb"><img src="images/productName5.png" ></div>
+                            <div id="car5" class="positionAb"><img src="images/car5.png" ></div>
+                            <div id="man5" class="positionAb"><img src="images/man5.png" ></div>
+                            <div id="boxToy5" class="positionAb"><img src="images/boxToy5.png" ></div>
+                        </div>      
+                        
+                        <div id="player-6" class="positionAb">
+                            <div id="productName6" class="positionAb"><img src="images/productName6.png" ></div>
+                            <div id="car6" class="positionAb"><img src="images/car6.png" ></div>
+                            <div id="man6" class="positionAb"><img src="images/man6.png" ></div>
+                            <div id="boxToy6" class="positionAb"><img src="images/boxToy6.png" ></div>
+                        </div>  
+                        
+                        <div id="player-7" class="positionAb">
+                            <div id="productName7" class="positionAb"><img src="images/productName7.png" ></div>
+                            <div id="car7" class="positionAb"><img src="images/car7.png" ></div>
+                            <div id="man7" class="positionAb"><img src="images/man7.png" ></div>
+                            <div id="boxToy7" class="positionAb"><img src="images/boxToy7.png" ></div>
+                        </div>     
+                        
+                        <div id="player-8" class="positionAb">
+                            <div id="productName8" class="positionAb"><img src="images/productName8.png" ></div>
+                            <div id="car8" class="positionAb"><img src="images/car8.png" ></div>
+                            <div id="man8" class="positionAb"><img src="images/man8.png" ></div>
+                            <div id="boxToy8" class="positionAb"><img src="images/boxToy8.png" ></div>
+                        </div>                            
+
+                    </div>
+
+                    <div id="cta-game" class="positionAb"><img src="images/cta-game.png" ></div>
+                    <div class="positionAb text-game"><img src="images/text-game.png" ></div>
+
+
+
+                </div>
+
+
+
+                <div class="endframe positionAb">
+                    <div class="positionAb character-1"><img src="images/character-1.png" ></div>
+                    <div class="positionAb character-2"><img src="images/character-2.png" ></div>
+                    <div class="positionAb character-3"><img src="images/character-3.png" ></div>
+                    <div class="positionAb character-4"><img src="images/character-4.png" ></div>
+                    <div class="positionAb character-5"><img src="images/character-5.png" ></div>
+                    <div class="positionAb character-6"><img src="images/character-6.png" ></div>
+                    <div class="positionAb character-7"><img src="images/character-7.png" ></div>
+                    <div class="positionAb character-8"><img src="images/character-8.png" ></div>
+
+                    <div class="positionAb anim1-shadow"><img src="images/anim1-shadow.png" ></div>
+                    <div class="positionAb anim2-shadow"><img src="images/anim2-shadow.png" ></div>
+                    <div class="positionAb anim3-shadow"><img src="images/anim3-shadow.png" ></div> 
+
+                    <div class="positionAb anim1"><img src="images/anim1.png" ></div>
+                    <div class="positionAb anim2"><img src="images/anim2.png" ></div>
+                    <div class="positionAb anim3"><img src="images/anim3.png" ></div>   
+                    <div class="positionAb text-endframe"><img src="images/text-endframe.png" ></div>
+
+                    <div class="positionAb right"><img src="images/right.png" ></div>    
+                    <div class="positionAb cta-endframe"><img src="images/cta-endframe.png" ></div>                    
+
+                </div>
+
+            
+               
+                <div class="positionAb left"><img src="images/left.png" ></div>
+                <div class="positionAb logo"><img src="images/logo.png" ></div>
+
+
+
+
+                <div class="wrapVideo">
+                      <div class="positionAb overlay"></div>
+                      <video class="positionAb" id="video" playsinline webkit-playsinline muted preload="auto" poster=""></video>
+                </div>
+
+
+                <div id="clickTag" class="positionAb fullSize"></div>
+
+
+                <div class="skip positionAb">skip</div>
+
+                <div class="controls" aria-label="Controles de video">
+                  <button id="btnPlayPause" class="btn" aria-label="Play">
+                    <img id="icoPlayPause" alt="" width="20" height="20" />
+                  </button>
+                  <button id="btnMute" class="btn" aria-label="Unmute">
+                    <img id="icoMute" alt="" width="20" height="20" />
+                  </button>
+                </div>
+
+
+        <div class="frame" aria-hidden="true"></div>
+
+      </section>
+
+
+    </div>
+  </div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+<script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+
+<script src="main.js"></script>
+
+</html>
