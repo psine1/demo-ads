@@ -1,0 +1,371 @@
+    :root{
+      --bg:#0b0b0c; --ink:#020202; --accent:#ffd74a; --accent2:#5eead4;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:#111;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    /*
+      El contenedor .ad debe tener su tamaño definido por el entorno (slot del ad).
+      Este template escala y centra el contenido a 640×1080 (portrait) o 1024×600 (landscape)
+      según la relación de aspecto del contenedor real.
+    */
+
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    #loader-container {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        position: absolute;
+        background: #020202;
+        z-index: 10000;
+    }
+
+    #banner_content {
+        display: none;
+    }    
+
+
+    #loader-container .circle {
+        -webkit-animation: spin 0.5s linear infinite;
+        animation: spin 0.5s linear infinite;
+        border: 5px solid #ddd;
+        border-bottom-color: #333;
+        border-radius: 50%;
+        height: 40px;
+        left: 50%;
+        margin-left: -22.5px;
+        margin-top: -22.5px;
+        position: absolute;
+        top: 50%;
+        -webkit-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
+        width: 40px;
+    }
+
+    @-webkit-keyframes spin {
+        from {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        from {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+
+
+    #clickTag {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        box-sizing: border-box;
+        top: -1px;
+        left: -1px;
+    }
+
+
+    .ad{
+                display: none;
+
+      position:relative;
+      width:100%; height:100%;
+      overflow:hidden; background:var(--bg);
+      color:var(--ink);
+    }
+    /* Stage escalable */
+    #stage{ position:absolute; left:0; top:0; transform-origin:0 0; }
+
+    /* Helpers visuales para ver límites base */
+    .frame{position:absolute; inset:0; /*outline:1px dashed #ffffff33; */ pointer-events:none}
+
+    /* Visibilidad por orientación */
+    .is-portrait .only-portrait{display:block}
+    .is-portrait .only-landscape{display:none}
+    .is-landscape .only-portrait{display:none}
+    .is-landscape .only-landscape{display:block}
+
+    /* Demo styles */
+
+      .positionAb{
+        position: absolute;
+      }
+
+      img{
+        width: 100%;
+      }
+
+
+    .bg{
+        width: 1600px;
+        height: 1094px;
+        top: -294px;
+        left: -288px;
+      }
+
+    .speed{
+        width: 1600px;
+        height: 1094px;
+        top: -294px;
+        left: -288px;
+      }      
+
+    #scene{
+        width: 1600px;
+        height: 1094px;
+     
+      }      
+
+    .sun{
+        width: 1600px;
+        height: 1000px;
+        top: -200px;
+        left: -288px;
+      }      
+
+
+    .left{
+        width: 1600px;
+        height: 1000px;
+        top: -200px;
+        left: -288px;
+      }            
+
+
+    .right{
+        width: 1600px;
+        height: 1000px;
+        top: -200px;
+        left: -288px;
+      }    
+
+    .logo{
+        width: 137px;
+        height: 51px;
+        top: 63px;
+        left: 30px;
+      }          
+
+    .cta-endframe{
+        width: 198px;
+        height: 33px;
+        top: 518px;
+        left: 808px;
+      }      
+
+    .text-endframe{
+        width: 441px;
+        height: 177px;
+        top: 205px;
+        left: 289px;
+      }     
+
+    [class*="character-"]{
+        width: 749px;
+        height: 308px;
+        left: 217px;
+        top: 65px;
+    }
+
+    [class*="anim"]{
+        width: 497px;
+        height: 214px;
+        left: 126px;
+        top: 341px;
+    }
+
+    [class*="-shadow"]{
+        mix-blend-mode: multiply;
+    }    
+
+    .bg-endframe{
+        width: 1600px;
+        height: 1000px;
+        top: -200px;
+        left: -288px;
+      }    
+
+
+    .game{
+        width: 1024px;
+        height: 600px;
+        top: 0px;
+        left: 0px;
+      }    
+
+    .selectPlayer-1{
+        width: 107px;
+        height: 111px;
+        top: 165px;
+        left: 592px;
+      }    
+
+    .selectPlayer-2{
+        width: 107px;
+        height: 111px;
+        top: 165px;
+        left: 698px;
+      }       
+      
+    .selectPlayer-3{
+        width: 107px;
+        height: 111px;
+        top: 165px;
+        left: 804px;
+      }             
+
+    .selectPlayer-4{
+        width: 107px;
+        height: 111px;
+        top: 165px;
+        left: 909px;
+      }         
+      
+      
+    .selectPlayer-5{
+        width: 107px;
+        height: 111px;
+        top: 271px;
+        left: 592px;
+      }    
+
+    .selectPlayer-6{
+        width: 107px;
+        height: 111px;
+        top: 271px;
+        left: 698px;
+      }       
+      
+    .selectPlayer-7{
+        width: 107px;
+        height: 111px;
+        top: 271px;
+        left: 804px;
+      }             
+
+    .selectPlayer-8{
+        width: 107px;
+        height: 111px;
+        top: 271px;
+        left: 909px;
+      }            
+      
+      
+
+    [class*="selectPlayer-"]{
+        pointer-events: all;
+        z-index: 9999 !important;
+    }
+
+
+    .shine{
+        filter: drop-shadow(0 0 6px rgb(242 245 91)) drop-shadow(8px 12px 10px rgba(242 245 91)); 
+
+    }
+
+
+
+
+    [id*="car"], [id*="man"], [id*="productName"], [id*="boxToy"]{
+        width: 645px;
+        height: 388px;
+        left: 3px;
+        top: 146px;
+    }
+
+
+    .text-game{
+        width: 364px;
+        height: 94px;
+        top: 70px;
+        left: 615px;
+      }     
+
+    #cta-game{
+        width: 190px;
+        height: 55px;
+        top: 432px;
+        left: 709px;
+        pointer-events: auto;
+        z-index: 9999 !important;
+      }            
+          
+  .st0{fill:none;stroke: transparent;stroke-width:2;stroke-miterlimit:10;opacity:.35}
+  #fx > *{pointer-events:none; backdrop-filter: blur(40px);}      
+
+
+
+  .overlay{
+        width: 1600px;
+        height: 1000px;
+        top: -200px;
+        left: -288px;
+        background-color: #000;    
+  }
+
+  video{
+    width:100%; height:100%; object-fit:cover; display:block; background:#000;
+  }
+
+  
+.controls{
+  position:absolute; right:12px; top:12px;
+  display:flex; gap:8px; padding:8px;
+  background: transparent; /* por las dudas */
+}
+
+  .skip{ position:absolute; left:12px; top:12px; padding:10px; color:#fff; font-size:18px; opacity:.8; pointer-events: all; }
+
+
+/* RESET del botón */
+.btn{
+  background: transparent;   /* quita el blanco */
+  border: 0;
+  -webkit-appearance: none;  /* iOS/Safari */
+  appearance: none;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;            /* evita “alto de línea” extra */
+  border-radius: 999px;      /* opcional, si querés redondo */
+}
+
+.btn img{
+  display: block;
+  width: 40px; height: 40px;
+  pointer-events: none;      /* el click cae en el botón */
+}
+
+.btn:active{ transform: translateY(1px) }
+
+/* Accesibilidad: mantené foco visible */
+.btn:focus{ outline: none; }
+.btn:focus-visible{
+  outline: 2px solid rgba(255,255,255,.9);
+  outline-offset: 2px;
+}
+
+.rotate{
+    width: 100%;
+    height: auto;
+}
