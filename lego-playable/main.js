@@ -570,7 +570,8 @@ function initAnimations(){
 function initHandlers() {
 
   var clicktag = document.getElementById('clickTag');
-  clicktag.addEventListener('mouseup', function(event) {             
+  clicktag.addEventListener('mouseup', function(event) {  
+    window.open(window.clickTag,'_blank');                  
       Enabler.exit('Exit');          
   })
 
